@@ -1,4 +1,4 @@
-FROM node:latest
+FROM node:8
 WORKDIR /ExpressTemplate
 COPY package.json /ExpressTemplate
 RUN npm install
