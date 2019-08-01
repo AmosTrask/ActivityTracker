@@ -1,4 +1,4 @@
-# ExpressTemplate [![Build Status](https://travis-ci.org/AmosTrask/ExpressTemplate.svg?branch=master)](https://travis-ci.org/AmosTrask/ExpressTemplate)[![codecov](https://codecov.io/gh/AmosTrask/ExpressTemplate/branch/master/graph/badge.svg)](https://codecov.io/gh/AmosTrask/ExpressTemplate)
+# ExpressTemplate [![Build Status](https://travis-ci.org/AmosTrask/ExpressTemplate.svg?branch=master)](https://travis-ci.org/AmosTrask/ExpressTemplate) [![codecov](https://codecov.io/gh/AmosTrask/ExpressTemplate/branch/master/graph/badge.svg)](https://codecov.io/gh/AmosTrask/ExpressTemplate)
 
 Basic REST API with Express, TypeScript, MongoDB and Jest.
 
