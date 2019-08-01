@@ -1,3 +1,4 @@
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/03dbd4c86c964f68ab93ac8ba1d8dd07)](https://app.codacy.com/app/AmosTrask/ExpressTemplate?utm_source=github.com&utm_medium=referral&utm_content=AmosTrask/ExpressTemplate&utm_campaign=Badge_Grade_Dashboard)
 # ExpressTemplate [![Build Status](https://travis-ci.org/AmosTrask/ExpressTemplate.svg?branch=master)](https://travis-ci.org/AmosTrask/ExpressTemplate) [![codecov](https://codecov.io/gh/AmosTrask/ExpressTemplate/branch/master/graph/badge.svg)](https://codecov.io/gh/AmosTrask/ExpressTemplate)
 
 Basic REST API with Express, TypeScript, MongoDB and Jest.
