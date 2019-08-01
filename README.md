@@ -1,3 +1,5 @@
+# ExpressTemplate [![Build Status](https://travis-ci.org/AmosTrask/ExpressTemplate.svg?branch=master)](https://travis-ci.org/AmosTrask/ExpressTemplate)
+
 Basic REST API with Express, TypeScript, MongoDB and Jest.
 
 ## Execution
