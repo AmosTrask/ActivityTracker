@@ -1,0 +1,9 @@
+coverage:
+  status:
+      project: no
+      patch: no
+
+ignore:
+  - "src/api"
+  - "test/"
+  - "scripts/"

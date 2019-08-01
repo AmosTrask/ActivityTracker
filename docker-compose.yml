@@ -1,0 +1,24 @@
+version: "2"
+services:
+  app:
+    container_name: expresstemplate
+    image: expresstemplate
+    build: .
+    command: npm run serve-init-db
+    env_file:
+      - .env
+    ports:
+      - "3000:3000"
+    links:
+      - mongo
+    volumes:
+      - ./src:/ExpressTemplate/src
+  mongo:
+    container_name: mongo
+    image: mongo
+    volumes:
+      - mongodata:/data/db
+    ports:
+      - "27017:27017"
+volumes:
+    mongodata:

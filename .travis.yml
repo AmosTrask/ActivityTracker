@@ -1,0 +1,33 @@
+language: node_js
+
+install:
+  - npm install
+
+node_js:
+  - "8"
+  - "node"
+
+services:
+  - mongodb
+
+before_script:
+  - export MONGODB_URL="mongodb://localhost:27017"
+  - export DB_NAME="ExpressTemplateDB"
+  - export TOKEN_MINUTES="60"
+  - sleep 10
+  - npm run init-db
+
+script:
+  - npm run build
+  - npm run lint
+  - npm run coverage
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
+
+cache:
+  directories:
+    - node_modules
+
+notifications:
+  email: false
