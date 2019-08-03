@@ -18,6 +18,6 @@ app.use("/signup", SignupAPI);
 
 app.use(AuthGuard);
 
-app.use("/users", UserAPI);
+app.use("/user", UserAPI);
 
 export default app;
