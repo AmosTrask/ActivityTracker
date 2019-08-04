@@ -6,7 +6,8 @@
     "lastName": "Admin",
     "password": "$2b$10$F7wTryiqYp5epdY9DsV7s.nmXN7hM7QBqYjjUjhZOV3H.hP03qZFG",
     "email": "admin@admin.com",
-    "role": "ADMIN"
+    "role": "ADMIN",
+    "activities": []
   },
   {
     "_id": "5bc362b8d95d221ddccaa218",
@@ -15,6 +16,7 @@
     "lastName": "Redouté",
     "password": "$2b$10$F7wTryiqYp5epdY9DsV7s.nmXN7hM7QBqYjjUjhZOV3H.hP03qZFG",
     "email": "vincent@user.com",
-    "role": "USER"
+    "role": "USER",
+    "activities": []
   }
 ]

@@ -15,6 +15,7 @@ const userRef: User = {
   lastName: "testLN",
   password: "testPwd",
   email: "test@test.com",
+  activities: [],
 };
 
 const userRefCopy: User = {
@@ -24,6 +25,7 @@ const userRefCopy: User = {
   lastName: "testLN",
   password: "testPwd",
   email: "test@test.com",
+  activities: [],
 };
 
 beforeAll(async () => {

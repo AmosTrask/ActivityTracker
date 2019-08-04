@@ -13,6 +13,7 @@ router.post("/", async (req, res) => {
       password: req.body.password,
       email: req.body.email,
       role: req.body.role,
+      activities: [],
     });
     res.status(201).send(userDto);
 

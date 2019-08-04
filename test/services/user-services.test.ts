@@ -4,6 +4,8 @@ import { initDb } from "../../scripts/init-db";
 import { User } from "../../src/entities/user";
 import { Roles } from "../../src/enums/roles";
 import { UserService } from "../../src/services/user-service";
+import { Activity } from "../../src/entities/activity/activity";
+import { UserDto } from "../../src/dto/user-dto";
 
 const userRef: User = {
   role: Roles.USER,
@@ -12,6 +14,7 @@ const userRef: User = {
   lastName: "testLN",
   password: "testPwd",
   email: "test@test.com",
+  activities: [],
 };
 
 const userRefCopy: User = {
@@ -21,6 +24,17 @@ const userRefCopy: User = {
   lastName: "testLN",
   password: "testPwd",
   email: "test@test.com",
+  activities: [],
+};
+
+const userRefToUpdateDto: UserDto = {
+  _id: "",
+  role: Roles.USER,
+  username: "testUser",
+  firstName: "testUpdate",
+  lastName: "testLN",
+  email: "test@test.com",
+  activities: [],
 };
 
 beforeAll(async () => {
@@ -37,6 +51,7 @@ describe("user service", () => {
     await UserService.createUser(user);
 
     const authenticatedUser = await UserService.authenticateUser(userRef.username, userRef.password);
+    userRefToUpdateDto._id = authenticatedUser._id;
 
     expect(authenticatedUser).not.toBeNull();
     expect(authenticatedUser.username).toBe(user.username);
@@ -61,6 +76,20 @@ describe("user service", () => {
 
   it("should fail login if invalid username", async (done) => {
     await expect(UserService.authenticateUser("Wrongadmin", "pwd")).rejects.toThrow("Authentification failed.");
+
+    done();
+  });
+
+  it("should update a user correctly", async (done) => {
+    const updatedUserDto: UserDto = await UserService.updateUser(userRefToUpdateDto);
+
+    expect(updatedUserDto).not.toBeNull();
+    expect(updatedUserDto.firstName).toBe(userRefToUpdateDto.firstName);
+
+    const authenticatedUser = await UserService.authenticateUser(userRef.username, userRef.password);
+
+    expect(authenticatedUser).not.toBeNull();
+    expect(authenticatedUser.firstName).toBe(updatedUserDto.firstName);
 
     done();
   });

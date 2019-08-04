@@ -4,6 +4,7 @@ import * as bcrypt from "bcryptjs";
 import { UserDao } from "../dao/user-dao";
 import { DtoFactory } from "../factories/dto-factory";
 import { UserDto } from "../dto/user-dto";
+import { UserFactory } from "../factories/user-factory";
 
 export class UserService {
 
@@ -28,6 +29,15 @@ export class UserService {
       }
     }
     throw new Error("Authentification failed.");
+  }
+
+  public static async updateUser(userDto: UserDto): Promise<UserDto> {
+    const user: User = UserFactory.makeUserFromDto(userDto);
+    const updatedUser: User = await UserDao.updateUser(user);
+    if (updatedUser) {
+      return DtoFactory.convert(updatedUser) as UserDto;
+    }
+    throw new Error("Update failed.");
   }
 
   /**
