@@ -1,5 +1,4 @@
 import { DTO } from "./dto.abstract";
-import { Activity } from "../entities/activity/activity";
 
 export class UserDto extends DTO {
   public _id: string;
