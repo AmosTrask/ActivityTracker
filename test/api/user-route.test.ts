@@ -56,4 +56,15 @@ describe("User api", () => {
                 done();
             });
     });
+
+    it("get the user", (done) => {
+        request(app).get("/user")
+            .set("Authorization", "Bearer " + token)
+            .send(user)
+            .expect(200)
+            .then((response: any) => {
+                expect(response.body.username).toBe("admin");
+                done();
+            });
+    });
 });

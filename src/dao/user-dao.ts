@@ -10,7 +10,7 @@ export class UserDao {
     const db: Db = await MongoDB.Instance.getClient();
     if (db) {
       const userDB: Collection<User> = db.collection("users");
-      const user: User = await userDB.findOne({ id });
+      const user: User = await userDB.findOne({ _id: new ObjectID(id) });
       if (user) {
         return UserFactory.makeUser(user);
       }

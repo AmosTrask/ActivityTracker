@@ -4,8 +4,13 @@ import { UserService } from "../services/user-service";
 
 const router = express.Router();
 
-router.get("/", (req, res) => {
-  res.send(req.user);
+router.get("/", async (req, res) => {
+  try {
+    const userDto: UserDto = await UserService.getUserById(req.user.id);
+    res.status(200).send(userDto);
+  } catch (err) {
+    res.status(500).send({ error: err.message });
+  }
 });
 
 router.put("/", async (req, res) => {

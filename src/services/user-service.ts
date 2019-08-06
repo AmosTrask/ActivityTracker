@@ -8,6 +8,14 @@ import { UserFactory } from "../factories/user-factory";
 
 export class UserService {
 
+  public static async getUserById(id: string): Promise<UserDto> {
+    const user: User = await UserDao.getUserById(id);
+    if (user) {
+      return DtoFactory.convert(user) as UserDto;
+    }
+    throw new Error("User not found.");
+  }
+
   public static async createUser(user: User): Promise<UserDto> {
     const existing: boolean = await this.existingUsername(user.username);
     if (existing) {

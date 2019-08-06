@@ -50,7 +50,7 @@ describe("user service", () => {
     const user = new User(userRef);
     await UserService.createUser(user);
 
-    const authenticatedUser = await UserService.authenticateUser(userRef.username, userRef.password);
+    const authenticatedUser: UserDto = await UserService.authenticateUser(userRef.username, userRef.password);
     userRefToUpdateDto._id = authenticatedUser._id;
 
     expect(authenticatedUser).not.toBeNull();
@@ -90,6 +90,17 @@ describe("user service", () => {
 
     expect(authenticatedUser).not.toBeNull();
     expect(authenticatedUser.firstName).toBe(updatedUserDto.firstName);
+
+    done();
+  });
+
+  it("should retrieve a user", async (done) => {
+    const authenticatedUser: UserDto = await UserService.authenticateUser(userRef.username, userRef.password);
+
+    const retrieveUserDto: UserDto = await UserService.getUserById(authenticatedUser._id);
+
+    expect(retrieveUserDto).not.toBeNull();
+    expect(retrieveUserDto.firstName).toBe(authenticatedUser.firstName);
 
     done();
   });
