@@ -5,6 +5,7 @@ import { AuthGuard } from "./auth/auth-guard";
 import { TokenIssuer } from "./auth/token-issuer";
 import { UserAPI } from "./api/user-route";
 import { SignupAPI } from "./api/signup-route";
+import { ActivityAPI } from "./api/activity-route";
 
 const cors = require("cors");
 
@@ -19,5 +20,6 @@ app.use("/signup", SignupAPI);
 app.use(AuthGuard);
 
 app.use("/user", UserAPI);
+app.use("/activity", ActivityAPI);
 
 export default app;

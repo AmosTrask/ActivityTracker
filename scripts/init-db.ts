@@ -8,6 +8,7 @@ export async function initDb() {
   const db: Db = await MongoDB.Instance.getClient();
 
   await initData(db, "users", "data/users.json");
+  await initData(db, "activities", "data/activities.json");
 }
 
 async function initData(db: Db, collectionName: string, filePath?: string) {
