@@ -8,5 +8,4 @@ export class UserDto extends DTO {
   public lastName: string;
   public email: string;
   public role: string;
-  public activities: Activity[];
 }

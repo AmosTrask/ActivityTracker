@@ -16,7 +16,6 @@ const admin: UserDto = {
     firstName: "testFN",
     lastName: "testLN",
     email: "test@test.com",
-    activities: [],
 };
 
 const user: UserDto = {
@@ -26,7 +25,6 @@ const user: UserDto = {
     firstName: "testFN",
     lastName: "testLN",
     email: "test@test.com",
-    activities: [],
 };
 
 beforeAll(async () => {

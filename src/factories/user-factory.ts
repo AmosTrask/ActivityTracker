@@ -26,7 +26,6 @@ export class UserFactory {
         password: "",
         email: userDto.email,
         role: userDto.role,
-        activities: userDto.activities,
       });
     }
     return new User({
@@ -37,7 +36,6 @@ export class UserFactory {
       password: "",
       email: userDto.email,
       role: userDto.role,
-      activities: userDto.activities,
     });
   }
 }

@@ -2,7 +2,6 @@ import { ObjectID, Db, Collection, MongoError, WriteOpResult } from "mongodb";
 import { User } from "../entities/user";
 import { MongoDB } from "../providers/mongodb";
 import { UserFactory } from "../factories/user-factory";
-import { UserDto } from "../dto/user-dto";
 
 export class UserDao {
 
@@ -54,7 +53,6 @@ export class UserDao {
             firstName: user.firstName,
             lastName: user.lastName,
             email: user.email,
-            activities: user.activities,
           },
         });
       if (result.result.ok && result.result.nModified === 1) {

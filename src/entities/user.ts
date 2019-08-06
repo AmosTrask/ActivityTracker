@@ -10,7 +10,6 @@ export class User extends Entity {
   public password: string;
   public email: string;
   public role: string;
-  public activities: Activity[];
 
   constructor(user: User) {
     super();
@@ -22,6 +21,5 @@ export class User extends Entity {
     this.password = user.password;
     this.email = user.email;
     this.role = user.role;
-    this.activities = user.activities;
   }
 }
