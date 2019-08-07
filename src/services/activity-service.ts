@@ -11,11 +11,19 @@ import { UserService } from "./user-service";
 
 export class ActivityService {
 
-  public static async createActivity(activity: Activity, userId: string): Promise<ActivityDto> {
+  public static async createActivity(activity: Activity): Promise<ActivityDto> {
     const savedActivity: Activity = await ActivityDao.createActivity(activity);
     if (savedActivity) {
       return DtoFactory.convert(savedActivity) as ActivityDto;
     }
     throw new Error("Activity creation failed.");
+  }
+
+  public static async getActivitiesByUser(userId: string): Promise<ActivityDto []> {
+    const activities: Activity[] = await ActivityDao.getActivitiesByUser(userId);
+    if (activities) {
+      return activities.map((activityDto) => DtoFactory.convert(activityDto) as ActivityDto);
+    }
+    throw new Error("No activities for this user.");
   }
 }

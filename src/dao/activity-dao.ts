@@ -28,4 +28,16 @@ export class ActivityDao {
     }
     return null;
   }
+
+  public static async getActivitiesByUser(id: string): Promise<Activity []> {
+    const db: Db = await MongoDB.Instance.getClient();
+    if (db) {
+      const activityDB: Collection<Activity> = db.collection("activities");
+      const activities: Activity[] = await activityDB.find({idUser: id}).toArray();
+      if (activities) {
+        return activities.map((activity) => ActivityFactory.makeActivity(activity));
+      }
+    }
+    return null;
+  }
 }
