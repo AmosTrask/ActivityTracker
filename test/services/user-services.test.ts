@@ -4,7 +4,6 @@ import { initDb } from "../../scripts/init-db";
 import { User } from "../../src/entities/user";
 import { Roles } from "../../src/enums/roles";
 import { UserService } from "../../src/services/user-service";
-import { Activity } from "../../src/entities/activity/activity";
 import { UserDto } from "../../src/dto/user-dto";
 
 const userRef: User = {
@@ -14,7 +13,6 @@ const userRef: User = {
   lastName: "testLN",
   password: "testPwd",
   email: "test@test.com",
-  activities: [],
 };
 
 const userRefCopy: User = {
@@ -24,7 +22,6 @@ const userRefCopy: User = {
   lastName: "testLN",
   password: "testPwd",
   email: "test@test.com",
-  activities: [],
 };
 
 const userRefToUpdateDto: UserDto = {
@@ -34,7 +31,6 @@ const userRefToUpdateDto: UserDto = {
   firstName: "testUpdate",
   lastName: "testLN",
   email: "test@test.com",
-  activities: [],
 };
 
 beforeAll(async () => {
